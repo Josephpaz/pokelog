@@ -50,7 +50,11 @@
         >É necessário preencher o campo de busca*</b-alert
       >
 
-      <div class="pokeCards" style="margin-top: 2rem" v-if="this.pokeSearch[0] !== undefined">
+      <div
+        class="pokeCards"
+        style="margin-top: 2rem"
+        v-if="this.pokeSearch[0] !== undefined"
+      >
         <div v-for="(pokemon, index) in pokeSearch" :key="'poke' + index">
           <b-card
             :title="pokemon.name"
@@ -144,7 +148,9 @@
       </div>
     </div>
     <h2 class="museum">Catálogo de Pokemons</h2>
-    <h3>Espécies trazidas por Ash de sua recente expedição.</h3>
+    <h3 style="font-size: 24px">
+      Espécies trazidas por Ash de sua recente expedição.
+    </h3>
     <h5>Aproveite, pode ser quer você não veja-os novamente por aqui.</h5>
     <div class="pokeCards">
       <div v-for="(pokemon, index) in pokemons" :key="'poke' + index">
@@ -162,7 +168,7 @@
             }}
           </b-card-text>
           <b-button
-            v-b-modal.modal-1
+            v-b-modal.modal-center
             variant="outline-primary"
             @click="showDetail(pokemon)"
             >MAIS DETALHES</b-button
@@ -171,7 +177,8 @@
       </div>
     </div>
     <b-modal
-      id="modal-1"
+      id="modal-center"
+      centered
       :title="'Informações coletadas sobre ' + this.pokemonDetail.name"
       v-if="show"
       ok-only
@@ -319,7 +326,7 @@ export default {
         this.inputEmpty = false;
       } else {
         this.pokeSearch = [];
-        this.searchFlag = '';
+        this.searchFlag = "";
         this.inputEmpty = true;
       }
     },
@@ -342,6 +349,7 @@ h2,
 h3,
 h5 {
   text-align: center;
+  padding: 0.5rem;
 }
 
 .museum {
@@ -368,7 +376,7 @@ h5 {
   transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
-#modal-1 {
+#modal-center {
   text-transform: capitalize;
   display: flex;
   text-align: center;
@@ -377,6 +385,11 @@ h5 {
 #search {
   width: 40%;
   margin: 1rem auto;
+}
+@media (max-width: 768px) {
+  #search {
+    width: 70%;
+  }
 }
 
 #searchIcon:hover {
