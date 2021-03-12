@@ -365,7 +365,7 @@ h5 {
   flex-wrap: wrap;
   justify-content: space-evenly;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 1rem auto;
   text-transform: capitalize;
   /* align-items: center; */
 }
