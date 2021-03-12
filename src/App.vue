@@ -286,16 +286,11 @@ export default {
       Promise.all(this.pokemonPromises2).then((pokemon) => {
         this.pokemons2 = pokemon; //copiando o dado para o array.
         // this.pokemons2.sort(() => 0.5 - Math.random());
-        console.log(this.pokemons2);
       });
     },
     showDetail(index) {
       this.pokemonDetail = index;
-      console.log(this.pokemonDetail);
       this.show = true;
-    },
-    joinTypes(array) {
-      console.log(array);
     },
     fetchPokemonSearch() {
       let getPokemonName = (name) => `${this.apiUrl}${name}`;
@@ -314,10 +309,8 @@ export default {
           }
         )
       );
-      console.log(pokePromise);
       Promise.all(pokePromise).then((result) => {
         this.pokeSearch = result;
-        console.log(this.pokeSearch);
       });
     },
     searchPokemon() {
@@ -340,7 +333,6 @@ export default {
   },
   created() {
     this.fetchPokemon();
-    console.log(this.pokeSearch);
   },
 };
 </script>
