@@ -29,6 +29,7 @@
         ></b-form-input>
       </b-input-group>
       <b-alert
+        class="alert-btn"
         show
         variant="success"
         v-if="this.searchFlag === 200"
@@ -36,6 +37,7 @@
         >Pokemon encontrado com sucesso!</b-alert
       >
       <b-alert
+        class="alert-btn"
         show
         variant="danger"
         v-if="this.searchFlag === 404"
@@ -43,6 +45,7 @@
         >Oops... parece que não encontramos esse pokémon :(</b-alert
       >
       <b-alert
+        class="alert-btn"
         show
         variant="danger"
         v-if="this.inputEmpty"
@@ -70,7 +73,7 @@
               }}
             </b-card-text>
             <b-button
-              v-b-modal.modal-1
+              v-b-modal.modal-center
               variant="outline-primary"
               @click="showDetail(pokemon)"
               >MAIS DETALHES</b-button
@@ -391,7 +394,11 @@ h5 {
   #search {
     width: 70%;
   }
-
+  .alert-btn{
+    width: 90% !important;
+    font-size: 15px;
+    text-align: center;
+  }
 }
 
 #searchIcon:hover {
