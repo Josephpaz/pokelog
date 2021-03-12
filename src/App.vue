@@ -138,6 +138,7 @@
           v-model="page"
           :per-page="perPage"
           :options="{
+            chunk: 3,
             texts: {
               count:
                 'Amostras de {from} a {to} de {count} espécies coletadas|{count} records|One record',
@@ -390,6 +391,7 @@ h5 {
   #search {
     width: 70%;
   }
+
 }
 
 #searchIcon:hover {
