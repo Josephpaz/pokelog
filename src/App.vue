@@ -127,7 +127,7 @@
                 }}
               </b-card-text>
               <b-button
-                v-b-modal.modal-1
+                v-b-modal.modal-center
                 variant="outline-primary"
                 @click="showDetail(pokemon)"
                 >MAIS DETALHES</b-button
